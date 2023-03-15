@@ -1,0 +1,35 @@
+
+
+
+
+nbr ::  unsigned integer  ::    0 --> 4294967295
+
+
+4 294 967 295
+
+	
+
+
+
+
+    	 4	   294  967  295
+	miliar  milion	mil  ...
+
+
+
+
+struct NBR
+{
+	int unites		: 295
+	int milliers	: 967
+	int millions	: 294
+	int milliard	:   4
+}
+
+
+
+
+if
+
+
+

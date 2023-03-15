@@ -1,0 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaudeber <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/22 19:09:04 by aaudeber          #+#    #+#             */
+/*   Updated: 2022/11/23 09:52:17 by aaudeber         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_putchar.c"
+#include "ft_putstr.c"
+#include "ft_putnbr.c"
+#include "ft_strlen.c"
+#include <stdlib.h>
+
+int	ft_total_size(char *str, char *charset)
+{
+	int	i;
+	int	sum;
+	int	char_l;
+
+	i = 0;
+	sum = 0;
+	char_l = ft_strlen(charset);
+	while (str[i])
+	{
+		if(str[i] == 32)
+			sum += char_l;
+		else
+			sum += 1;
+		i++;
+	}
+	return (sum);
+}
+
+
+
+char	*ft_split(char *str, char *charset)
+{
+	char	*tab;
+	int	i;
+	tab = malloc(sizeof(*str) * (ft_total_size(str, charset) + 1));
+	if(!tab)
+		return (NULL);
+
+	i = 0;	
+	while (str[i])
+	{
+		while (str[i] == charset[i])
+		{
+
+		}
+		i++;
+
+	}
+	return ("tto");
+}
+
+int	main(void)
+{
+	char 	*str;
+	str = ft_split("salut#les#gens", "#");
+	ft_putstr(str);
+	return (0);
+}

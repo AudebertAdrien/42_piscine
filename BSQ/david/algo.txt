@@ -1,0 +1,181 @@
+42 BSQ
+//==============================================================
+
+Struct   s_map 
+     int       row_count
+     int       col_count
+     char    char_empty
+     char    char_full
+     char    char_obstacle
+     char    **rows
+     t_soluce.  Soluce
+t_map
+
+Struct   s_soluce
+     int       row_index
+     int       col_index
+     Int.      Size
+t_soluce
+
+
+//==============================================================
+
+
+
+Main
+
+
+/*
+
+   recuperer tous les arguments (qui correspondent a un ou plusieurs nom de fichiers map)
+
+   ex "map1.txt", "map2.txt", "map3.txt"....
+
+
+   envoyer chaque map filename a ::
+
+
+        create_map(maps_filename)
+
+
+
+*/
+
+
+//==============================================================
+
+=====================   create_map (char *   map_filename)
+
+
+// map_str = contenu d'un fichier Map.txt
+char   *map_str
+
+// map_str   splitté par \n
+char   *lignes_str
+
+
+//  t_map   map ==== s_map   *map   !!!!
+t_map   map
+
+
+map_str = read_file (map_filename)
+
+// Handle read error
+
+
+lignes_strs = Split (map_str,   \n)
+
+
+/*
+
+ Créer une t_map avec lignes_strs
+
+lignes_strs[0] → col_count,  char_empty,  char_full,    char_obstacle
+
+Autres lignes_strs → row_count,   rows
+
+*/
+map = get_map(map_str)
+
+// Handle Map error
+
+
+solve_map(t_map   map)
+
+
+//==============================================================
+
+=====================   solve_map(t_map   map)
+
+
+
+Parcourir chaque char de char rows de la Map
+
+   Si on est sur un vide
+
+   On parcourt toutes les cellules en x+i, y+i 
+   i sera la taille max du carré sans obstacle
+
+  If     i > map.soluce.size
+        map.soluce.row_index = y
+        map.soluce.col_index = x
+         map.soluce.Size = i
+
+Afficher la map
+
+
+
+
+
+//==============================================================
+
+//==============================================================
+
+//==============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Un plateau vous est transmis dans un fichier passé en argument du programme
+
+
+ La première ligne du plateau contient les informations pour lire la carte :
+— Le nombre de lignes du plateau ;
+— Le caractère "vide" ;
+— Le caractère "obstacle" ;
+— Le caractère "plein".
+
+
+
+Votre programme doit accepter de 1 à n paramètres.
+◦ Lorsque votre programme recoit plusieurs paramètres en argument, chaque
+solution ou map error doit être suivi d’un line break.
+◦ Si il n’y a aucun argument, votre fonction doit lire le carré sur l’entrée standard.
+◦ Vous devez rendre un Makefile qui compile votre projet. Votre Makefile ne doit
+pas relink.
+
+
+Définition d’une carte valide :
+◦ Toutes les lignes doivent avoir la même longueur.
+◦ Il y a au moins une ligne d’au moins une case.
+◦ À la fin de chaque ligne, il y a un retour à la ligne.
+◦ Les caractères présent dans la carte doivent être uniquement ceux présenté à
+la première ligne.
+◦ La carte est invalide si un caractère manque sur la première ligne, ou si deux
+caractères (parmis vide, plein, et obstacles) sont identiques.
+◦ Les caractères peuvent être n’importe quel caractère imprimable, même des
+nombres.
+◦ En cas de carte invalide, vous afficherez sur la sortie d’erreur : map error suivi
+d’un retour à la ligne. Le programme passera ensuite au traitement du plateau
+suivant
